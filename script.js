@@ -575,3 +575,33 @@ Arthur remained very worried
  Oh yes   said Arthur   and how far s that   
 
  About twelve minutes away   said Ford   come on  I need a drink   `
+
+
+
+
+let result = [...text].reduce((a, e) => { a[e] = a[e] ? a[e] + 1 : 1; return a }, {}); 
+
+
+let sortedArr= Object.entries(result)
+.sort((a,b) => b[1]-a[1]);
+let sorted=Object.assign(sortedArr);
+
+let sortedMoreThan50Times= sortedArr.filter(sortedArrCell=> sortedArrCell[1]>=50);
+
+console.log(sortedMoreThan50Times);
+
+let least10Frequent= sortedArr.filter(least=> least[1]>=50);
+
+
+let ascendingSortedArr= Object.entries(result)
+.sort((a,b) => a[1]-b[1]);
+
+console.log(ascendingSortedArr);
+
+least10Frequent=[];
+for (let i=0;i<10;i++){
+    least10Frequent.push(ascendingSortedArr[i]);
+};
+
+console.log(least10Frequent);
+
